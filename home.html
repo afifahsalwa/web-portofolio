@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id"> <!-- Deklarasi dokumen HTML dengan bahasa Indonesia -->
+<head>
+    <meta charset="UTF-8"> <!-- Mengatur karakter encoding dokumen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Pengaturan responsif untuk berbagai ukuran layar -->
+    <title>My Portofolio</title> <!-- Judul halaman -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); /* Instal font dari Google */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*font-family: Arial, sans-serif; /* Set font default */
+        }
+
+        body {
+            display: flex; /* Set flex container */
+            flex-direction: column; /* Atur flex secara kolom */
+            align-items: center; /* Atur item di tengah secara horizontal */
+            justify-content: center; /* Atur item di tengah secara vertikal */
+            min-height: 100vh; /* Set tinggi minimal 100% viewport */
+            /*background: linear-gradient(to bottom, #E67451, #9172EC); /* Gradasi biru ke putih */
+            background-image: url(background.jpg);
+            background-size: cover; /* Ukuran gambar latar belakang menutupi seluruh area */
+            background-repeat: no-repeat; /* Jangan ulang gambar latar belakang */
+            background-position: center; /* Posisikan gambar di tengah */
+            background-attachment: fixed; /* Pastikan background tidak ikut scroll */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 800px; /* Set lebar maksimal kontainer */
+            margin: 0 auto; /* Atur margin otomatis */
+            padding: 20px; /* Padding di dalam kontainer */
+        }
+
+        header {
+            position: fixed; /* Set header tetap di atas */
+            top: 0; /* Posisi di bagian atas halaman */
+            width: 100%; /* Lebar penuh */
+            padding: 20px; /* Padding di dalam header */
+            display: flex; /* Set flex container untuk header */
+            align-items: center; /* Atur item di tengah secara horizontal */
+            justify-content: space-between; /* Atur jarak antar item */
+            background-color: transparent; /* Warna latar belakang transparan */
+            z-index: 999; /* Ini penting agar tidak tertimpa elemen lain */
+        }
+
+
+        header h1 {
+           font-family: 'Chau Philomene One', cursive; /* Font Latin Elegan */
+           color: #2B1B17; /* Warna emas untuk nama perusahaan */
+           margin: 0; /* Menghilangkan margin */
+           font-size: 100; /* Ukuran font lebih besar */
+        }
+
+        .nav {
+            display: flex; /* Set flex container untuk navigasi */
+            gap: 30px; /* Jarak antar link navigasi */
+        }
+        .nav a {
+            text-decoration: none; /* Menghilangkan garis bawah link */
+            color: #413839; /* Warna teks navigasi  */
+            font-weight: bold; /* Teks tebal */
+            font-family: 'Concert One', cursive;
+            font-size: 20px;
+        }
+
+        .nav a:hover {
+            color: #504A4B; /* Warna saat hover */
+        }
+
+        main {
+            display: flex; /* Set flex container untuk konten utama */
+            flex-direction: column;
+            align-items: center; /* Atur item di tengah secara horizontal */
+            justify-content: space-between; /* Atur jarak antar item */
+            padding: 40px; /* Padding di dalam konten utama */
+            width: 80%; /* Lebar 80% dari kontainer utama */
+        }
+
+        .content {
+            color: #463E3F; /* Warna teks putih */
+            /*max-width: 50%; /* Lebar maksimal 50% */
+        }
+
+        .content h2 {
+             font-size: 50px;
+             font-family: 'Pacifico', cursive; /* Font Latin Elegan */
+        }
+
+        .content h3 {
+             font-size: 70px;
+             font-family: 'Lilita One', sans-serif;
+             letter-spacing: 2px; /* (Opsional) beri jarak antar huruf untuk efek elegan */
+             text-transform: uppercase; /* (Opsional) membuat huruf kapital semua */
+        }
+
+
+        .content p {
+            font-size: 20px; /* Mengatur ukuran font untuk paragraf */ 
+            color: #463E3F; /* Mengatur warna teks untuk paragraf */
+            left: 100px; /* Jarak dari kiri 100px */
+            font-family: 'Quicksand', cursive;
+        }
+
+        span {
+            display: block; /* Tampilkan sebagai blok */
+            text-align: justify; /* Rata kiri dan kanan */
+            margin-top: 5px; /* Jarak atas 5px */
+        }
+
+        .hero {
+            height: 75vh; /* Isi seluruh tinggi layar */
+            display: flex;
+            justify-content: center; /* Tengah horizontal */
+            align-items: center;     /* Tengah vertikal */
+            text-align: center;
+        } 
+
+        .hero-text h1,
+        .hero-text h2,
+        .hero-text p {
+            margin: 10px 0;
+             /* Warna teks bisa disesuaikan */
+        }
+
+        .btn-kenalan {
+             margin-top: 30px;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #E238EC;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-family: 'Tuffy', cursive;
+        }
+
+        .btn-kenalan:hover {
+            background-color: #E238EC;
+        }
+
+
+        .image img {
+            max-width: 100%; /* Lebar maksimal 100% dari kontainer */
+            height: auto; /* Tinggi otomatis sesuai rasio */
+            border-radius: 20px; /* Sudut membulat 20px */
+            width: 930px; /* Lebar gambar 930px */
+            position: absolute; /* Posisi absolut */
+            right: 40px; /* Jarak dari kanan 40px */
+            top: 211px; /* Jarak dari atas 211px */
+        }
+        /* Style untuk dropdown */
+        .dropdown {
+            position: relative; /* Posisi relatif */
+            display: inline-block; /* Tampilkan sebagai blok sebaris */
+        }
+
+        .dropbtn {
+            background-color: transparent; /* Latar belakang transparan */
+            color: #ffffff00; /* Warna teks transparan */
+            font-weight: bold; /* Teks tebal */
+            text-decoration: none; /* Menghilangkan garis bawah teks */
+            border: none; /* Menghilangkan border */
+            cursor: pointer; /* Tampilkan cursor pointer */
+            padding: 10px; /* Padding di dalam tombol */
+        }
+
+        .dropdown-content {
+            display: none; /* Sembunyikan konten dropdown */
+            position: absolute; /* Posisi absolut */
+            background-color: #f9f9f900; /* Latar belakang transparan */
+            min-width: 160px; /* Lebar minimal 160px */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Bayangan konten */
+            z-index: 1; /* Tingkat z-index */
+        }
+
+        .dropdown-content a {
+            color: rgb(255, 255, 255); /* Warna teks putih */
+            padding: 12px 16px; /* Padding di dalam link */
+            text-decoration: none; /* Menghilangkan garis bawah link */
+            display: block; /* Tampilkan sebagai blok */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f100; /* Latar belakang transparan saat hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Tampilkan konten dropdown saat hover */
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #413839; /* Warna emas saat hover */
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 15px; /* Kurangi padding vertikal */
+            background-color: rgba(255, 255, 255, 0.7); /* Semi transparan */
+            color: #333;
+            margin-top: 20px;
+            position: relative;
+            bottom: 0;
+            font-family: 'PT Sans', cursive;
+           /* Hanya sudut atas yang melengkung */
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .sosial-link {
+            margin: 5px 0;
+        }
+
+        .sosial-link a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2B1B17;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .sosial-link a:hover {
+            color: #E238EC;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+        .fade-in.show {
+            opacity: 1;
+        }
+
+
+</style>
+
+
+</style>
+</head>
+    <body >
+    <div class="container"></div> <!-- Kontainer utama -->
+    <header>
+        <h1>ASN</h1> <!-- Judul header -->
+        <div class="nav">
+            <a href="home.html">Home</a> <!-- Link navigasi ke halaman Home -->
+            <a href="about.html">About Me</a> <!-- Link navigasi ke halaman About -->
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Skill</a> <!-- Tombol dropdown Profile -->
+                <div class="dropdown-content">
+                    <a href="Myskill.html">My Skill</a> <!-- Link dropdown ke Profile PT -->
+                    <a href="Gallery.html">Gallery</a> <!-- Link dropdown ke Profile Owner -->
+                </div>
+            </div>
+            <a href="serti.html">Sertifikat</a> <!-- Link navigasi ke halaman Product -->
+            <a href="contact.html">My Contact</a> <!-- Link navigasi ke halaman Contact Person -->
+        </div>
+    </header>
+    <main>
+        <div class="hero">
+        <div class="content">
+            <h2> HAIII</h2>
+            <h3>I'am 'Afifah Salwa Nabila</h3> <!-- Heading utama -->
+            <p><span>"Kamu tak akan pernah tahu apa yang menantimu jika terus berdiam diri dan tak berani melangkah maju."</span></p> <!-- Paragraf dengan span -->
+        <div class="image">
+           <!--<img src="background.jpg" >-->   <!-- Gambar -->
+           <a href="about.html" class="btn-kenalan"> Yuk Kenalan</a>
+        </div>
+    </main>
+
+        <head>
+            <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lilita+One&family=Comic+Relief&family=Chau+Philomene+One&family=Concert+One&family=Tuffy&family=PT+Sans&display=swap" rel="stylesheet">
+        </head>
+          
+      
+
+    <footer>
+        <div class="sosial-link">
+            <a href="https://www.instagram.com/afifah_salwa_/" target="_blank">Instagram</a>
+            <a href="https://afifahsalwan.blogspot.com/" target="_blank">Blogspot</a>
+            <a href="https://www.linkedin.com/in/afifah-salwa-58520b28b/" target="_blank">LinkedIn</a>
+        </div>
+        <p>&copy; 2025 Afifah Salwa Nabila</p>
+    </footer>
+    
+
+    <script>
+        // Fungsi untuk menambahkan kelas 'fade-in' setelah halaman dimuat
+        window.onload = function() {
+            const content = document.getElementById('content');
+            content.classList.add('fade-in'); // Menambahkan kelas fade-in untuk animasi
+        };
+
+        window.addEventListener('load', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => {
+             el.classList.add('show');
+          });
+        });
+
+    </script>
+
+</body>
+</html

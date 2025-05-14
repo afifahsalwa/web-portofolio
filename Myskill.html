@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id"> <!-- Deklarasi dokumen HTML dengan bahasa Indonesia -->
+<head>
+    <meta charset="UTF-8"> <!-- Mengatur karakter encoding dokumen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Pengaturan responsif untuk berbagai ukuran layar -->
+    <title>My Portofolio</title> <!-- Judul halaman -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); /* Instal font dari Google */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*font-family: Arial, sans-serif; /* Set font default */
+        }
+
+        body {
+            display: flex; /* Set flex container */
+            flex-direction: column; /* Atur flex secara kolom */
+            align-items: center; /* Atur item di tengah secara horizontal */
+            justify-content: center; /* Atur item di tengah secara vertikal */
+            min-height: 100vh; /* Set tinggi minimal 100% viewport */
+            /*background: linear-gradient(to bottom, #E67451, #9172EC); /* Gradasi biru ke putih */
+            background-image: url(background.jpg);
+            background-size: cover; /* Ukuran gambar latar belakang menutupi seluruh area */
+            background-repeat: no-repeat; /* Jangan ulang gambar latar belakang */
+            background-position: center; /* Posisikan gambar di tengah */
+            background-attachment: fixed; /* Pastikan background tidak ikut scroll */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .container {
+            max-width: 800px; /* Set lebar maksimal kontainer */
+            margin: 0 auto; /* Atur margin otomatis */
+            padding: 20px; /* Padding di dalam kontainer */
+        }
+
+       header {
+            position: fixed; /* Set header tetap di atas */
+            top: 0; /* Posisi di bagian atas halaman */
+            width: 100%; /* Lebar penuh */
+            padding: 20px; /* Padding di dalam header */
+            display: flex; /* Set flex container untuk header */
+            align-items: center; /* Atur item di tengah secara horizontal */
+            justify-content: space-between; /* Atur jarak antar item */
+            background-color: transparent; /* Warna latar belakang transparan */
+            z-index: 999; /* Ini penting agar tidak tertimpa elemen lain */
+        }
+
+        header h1 {
+            font-family: 'Chau Philomene One', cursive; /* Font Latin Elegan */
+            color: #2B1B17; /* Warna emas untuk nama perusahaan */
+            margin: 0; /* Menghilangkan margin */
+            font-size: 100; /* Ukuran font lebih besar */
+        }
+
+        .nav {
+            display: flex; /* Set flex container untuk navigasi */
+            gap: 30px; /* Jarak antar link navigasi */
+        }
+        .nav a {
+            text-decoration: none; /* Menghilangkan garis bawah link */
+            color: #413839; /* Warna teks navigasi  */
+            font-weight: bold; /* Teks tebal */
+            font-family: 'Concert One', cursive;
+            font-size: 20px;
+        }
+
+        .nav a:hover {
+            color: #504A4B; /* Warna saat hover */
+        }
+
+        main {
+            display: flex; /* Set flex container untuk konten utama */
+            flex-direction: column;
+            align-items: center; /* Atur item di tengah secara horizontal */
+            justify-content: space-between; /* Atur jarak antar item */
+            padding: 10px; /* Padding di dalam konten utama */
+            width: 100%; /* Lebar 80% dari kontainer utama */
+        }
+
+       .content {
+            color: #463E3F;
+            text-align: center; /* Pastikan teks di dalamnya sejajar di tengah */
+            width: 100%;         /* Lebar penuh agar benar-benar responsif */
+            display: flex;       /* Gunakan flexbox */
+            flex-direction: column;
+            align-items: center; /* Pusatkan secara horizontal */
+            justify-content: center; /* (opsional, berguna kalau tinggi ditentukan) */
+            margin-top: 120px;   /* Tambahkan jarak dari header jika perlu */
+            background: transparent; /* Pastikan tidak menutupi background */
+
+        }
+
+        .content h2 {
+             font-size: 50px;
+             font-family: 'Shantell Sans', cursive; /* Font Latin Elegan */
+             margin-top: 0px; /* Geser ke atas lebih jauh */
+             margin-bottom: 10px; /* Tambahkan ini untuk atur jarak bawah */
+        }
+
+        .content h3 {
+            font-size: 80px;
+            font-family: 'Lilita One', cursive; /* Font Latin Elegan */
+        }
+
+
+        .content p {
+            font-size: 20px; /* Mengatur ukuran font untuk paragraf */ 
+            color: #463E3F; /* Mengatur warna teks untuk paragraf */
+            left: 100px; /* Jarak dari kiri 100px */
+            font-family: 'Comfortaa', cursive;
+            margin-bottom: 10px; /* Tambahkan ini atau kecilkan jika terlalu besar */
+        }
+        span {
+            display: block; /* Tampilkan sebagai blok */
+            text-align: justify; /* Rata kiri dan kanan */
+            margin-top: 5px; /* Jarak atas 5px */
+        }
+
+        .hero {
+            height: 75vh; /* Isi seluruh tinggi layar */
+            display: flex;
+            justify-content: center; /* Tengah horizontal */
+            align-items: center;     /* Tengah vertikal */
+            text-align: center;
+        } 
+
+        .hero-text h1,
+        .hero-text h2,
+        .hero-text p {
+            margin: 10px 0;
+             /* Warna teks bisa disesuaikan */
+        }
+
+
+        .image img {
+            max-width: 100%; /* Lebar maksimal 100% dari kontainer */
+            height: auto; /* Tinggi otomatis sesuai rasio */
+            border-radius: 20px; /* Sudut membulat 20px */
+            width: 930px; /* Lebar gambar 930px */
+            position: absolute; /* Posisi absolut */
+            right: 40px; /* Jarak dari kanan 40px */
+            top: 211px; /* Jarak dari atas 211px */
+        }
+        /* Style untuk dropdown */
+        .dropdown {
+            position: relative; /* Posisi relatif */
+            display: inline-block; /* Tampilkan sebagai blok sebaris */
+        }
+
+        .dropbtn {
+            background-color: transparent; /* Latar belakang transparan */
+            color: #ffffff00; /* Warna teks transparan */
+            font-weight: bold; /* Teks tebal */
+            text-decoration: none; /* Menghilangkan garis bawah teks */
+            border: none; /* Menghilangkan border */
+            cursor: pointer; /* Tampilkan cursor pointer */
+            padding: 10px; /* Padding di dalam tombol */
+        }
+
+        .dropdown-content {
+            display: none; /* Sembunyikan konten dropdown */
+            position: absolute; /* Posisi absolut */
+            background-color: #f9f9f900; /* Latar belakang transparan */
+            min-width: 160px; /* Lebar minimal 160px */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Bayangan konten */
+            z-index: 1; /* Tingkat z-index */
+        }
+
+        .dropdown-content a {
+            color: rgb(255, 255, 255); /* Warna teks putih */
+            padding: 12px 16px; /* Padding di dalam link */
+            text-decoration: none; /* Menghilangkan garis bawah link */
+            display: block; /* Tampilkan sebagai blok */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f100; /* Latar belakang transparan saat hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Tampilkan konten dropdown saat hover */
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #413839; /* Warna emas saat hover */
+        }
+
+
+        .skills-section {
+  margin-top: 30px;
+  padding: 0 20px 50px;
+  text-align: center;
+  background: transparent; /* transparan agar tidak menimpa background halaman */
+  position: relative;
+  z-index: 1;
+}
+
+
+
+    .skills-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+
+
+   .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px; /* tambahkan ini agar lebih fleksibel */
+    margin: 0 auto;   /* agar tetap di tengah */
+}
+
+
+    .skill-card {
+    background-color: rgba(238, 130, 238, 0.3);
+    border: 2px solid #EE82EE;
+    border-radius: 20px;
+    padding: 20px;
+    width: 280px;
+    transition: transform 0.3s ease;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* <== ini yang membuat isi di tengah horizontal */
+    text-align: center; /* <== ini agar teks di tengah juga */
+    box-sizing: border-box;
+}
+
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+    }
+
+
+    .skill-image {
+    width: 200px;
+    height: 100px;
+    object-fit: contain; /* agar gambar tidak terpotong */
+    border-radius: 10px; /* Sudut melengkung sedikit, bisa 0 jika tidak perlu */
+    padding: 5px;
+    margin-bottom: 5px; /* Jarak bawah dari gambar ke judul */
+}
+
+
+
+    .skill-title {
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #3B3131;
+      font-family: 'Contrail One', cursive;
+    }
+
+
+    .skill-list {
+      margin-top: 15px;
+      text-align: left;
+      padding-left: 20px;
+      font-size: 16px;
+      list-style-type: disc;
+      font-family: 'Gantari', cursive;
+    }
+
+
+    .skill-list li {
+      margin-bottom: 10px;
+    }
+
+
+    @media (max-width: 768px) {
+      .skills-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 15px; /* Kurangi padding vertikal */
+            background-color: rgba(255, 255, 255, 0.7); /* Semi transparan */
+            color: #333;
+            margin-top: 30px;
+            position: relative;
+            bottom: 0;
+            font-family: 'PT Sans', cursive;
+           /* Hanya sudut atas yang melengkung */
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .sosial-link {
+            margin: 5px 0;
+        }
+
+        .sosial-link a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2B1B17;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .sosial-link a:hover {
+            color: #E238EC;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+        .fade-in.show {
+            opacity: 1;
+        }
+
+
+</style>
+
+</style>
+<body>
+    <div class="container"></div> <!-- Kontainer utama -->
+    <header>
+        <h1>ASN</h1> <!-- Judul header -->
+        <div class="nav">
+            <a href="home.html">Home</a> <!-- Link navigasi ke halaman Home -->
+            <a href="about.html">About Me</a> <!-- Link navigasi ke halaman About -->
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Skill</a> <!-- Tombol dropdown Profile -->
+                <div class="dropdown-content">
+                    <a href="Myskill.html">My Skill</a> <!-- Link dropdown ke my skill -->
+                    <a href="Gallery.html">Gallery</a> <!-- Link dropdown ke sertifikat -->
+                </div>
+            </div>
+            <a href="serti.html">Sertifikat</a> <!-- Link navigasi ke halaman Product -->
+            <a href="contact.html">My Contact</a> <!-- Link navigasi ke halaman Contact Person -->
+        </div>
+    </header>
+
+
+   <main>
+    <!-- Judul dan deskripsi skill -->
+    <div class="content">
+        <h2>My Skill</h2>
+        <p><span>Inilah skill yang kupunya </span></p>
+    </div>
+
+    <!-- Bagian skill cards -->
+    <section class="skills-section">
+        <div class="skills-container">
+            <!-- Skill 1 -->
+            <div class="skill-card">
+                <img src="debian.png" alt="Linux debian" class="skill-image">
+                <h3 class="skill-title">Linux Debian</h3>
+                <ul class="skill-list">
+                    <li>Basic Comannant</li>
+                    <li>Network Management</li>
+                    <li>Management User and Group</li>
+                    <li>Management File</li>
+                    <li>Remote Access SSH</li>
+                    <li>Database (mysql)</li>
+                    <li>Web Server (Apache2 dan nginx)</li>
+                    <li>Wordpress</li>
+                </ul>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="skill-card">
+                <img src="mikrotik.png" alt="Linux debian" class="skill-image">
+                <h3 class="skill-title">MikroTik</h3>
+                <ul class="skill-list">
+                    <li>Akses menggunakan Winbox, Webfig dan SSH (PuTTy)</li>
+                    <li>Manajemen User and Group</li>
+                    <li>Router Gateway</li>
+                    <li>Wireless (AP Bridge & Station Bridge)</li>
+                    <li>Static Routing</li>
+                    <li>Simple Queue</li>
+                    <li>Tunnel (EoIP, PPTP, L2TP, PPPoE)</li>
+                    <li> Blokir Situs dengan Firewall Filter Forward (TLS)</li>
+                </ul>
+            </div>
+
+            <!-- Skill 3 -->
+                <div class="skill-card">
+                <img src="pemograman.png" alt="Linux debian" class="skill-image">
+                <h3 class="skill-title">Pemograman web</h3>
+                <ul class="skill-list">
+                    <li>Struktur HTML (tag, elemen, atribut)</li>
+                    <li>CSS Dasar (warna, font, box model, margin, padding)</li>
+                    <li>Membuat Halaman Statis (HTML + CSS)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lilita+One&family=Comic+Relief&family=Chau+Philomene+One&family=Concert+One&family=Tuffy&family=PT+Sans&family=Comfortaa&family=Roboto+Flex&family=Pontano+Sans&family=Shantell+Sans&family=Gantari&family=Contrail+One&display=swap" rel="stylesheet">
+    </head>
+
+           
+
+        <footer>
+            <div class="sosial-link">
+                <a href="https://www.instagram.com/afifah_salwa_/" target="_blank">Instagram</a>
+                <a href="https://afifahsalwan.blogspot.com/" target="_blank">Blogspot</a>
+                <a href="https://www.linkedin.com/in/afifah-salwa-58520b28b/" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 Afifah Salwa Nabila</p>
+        </footer>
+</body>
+</html
